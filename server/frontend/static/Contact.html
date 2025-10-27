@@ -1,0 +1,85 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+</head>
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
+      <div class="container-fluid">
+        <h2 style="padding-right: 5%;">Dealerships</h2>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" style="font-size: larger;" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" style="font-size: larger;" href="/about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="font-size: larger;" href="/contact">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+      <div class="card" style="width: 80%;margin: auto; margin-top:5%;">
+        <div class="banner" name="about-header">
+        <!-- Insert header information here -->
+        <h1>Contact Us</h1>
+        Welcome to Best Cars dealership, home to the best cars in North America. We deal in sale of domestic and imported cars at reasonable prices.
+        </div>
+        <div style="display: flex;flex-direction: row; margin:auto">
+            <div class="contact-container">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                  <h3>Our Office</h3>
+                  <p><strong>Address:</strong> 1234 Main Street, Toronto, Canada</p>
+                  <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                  <p><strong>Email:</strong> info@bestcars.com</p>
+                  <p><strong>Working Hours:</strong><br>Mon - Fri: 9:00 AM – 6:00 PM<br>Sat: 10:00 AM – 4:00 PM<br>Sun: Closed</p>
+                </div>
+          
+                <!-- Contact Form -->
+                <div class="contact-form">
+                  <h3>Get in Touch</h3>
+                  <form method="POST" action="/submit_contact">
+                    <div class="mb-3">
+                      <label for="name" class="form-label">Full Name</label>
+                      <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="email" class="form-label">Email Address</label>
+                      <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="message" class="form-label">Message</label>
+                      <textarea class="form-control" id="message" name="message" rows="4" placeholder="Write your message here" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="background-color: darkturquoise; border: none;">Send Message</button>
+                  </form>
+                </div>
+              </div>
+          
+              <!-- Google Map -->
+              <div class="map-container" style="padding: 0 2rem 2rem 2rem;">
+                <h3>Find Us</h3>
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.579823073083!2d-79.38393438450044!3d43.65322617912127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d3e2c6a8fb%3A0x6d5a9a76fef21f1f!2sToronto!5e0!3m2!1sen!2sca!4v1619036458349!5m2!1sen!2sca" 
+                  allowfullscreen="" loading="lazy">
+                </iframe>
+              </div>
+            </div>
+          
+            <footer>
+              <p>&copy; 2025 Best Cars Dealership. All Rights Reserved.</p>
+            </footer>
+      </div>
+      </div>
+      </div>
+      
+  </div>
+</html>
