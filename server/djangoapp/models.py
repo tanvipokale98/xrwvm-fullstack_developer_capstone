@@ -4,6 +4,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 
+
 class CarMake(models.Model):
     """Model representing a car manufacturer."""
     name = models.CharField(max_length=100)
@@ -36,7 +37,7 @@ class CarModel(models.Model):
         default=2023,
         validators=[
             MaxValueValidator(2023),
-            MinValueValidator(2015)
+            MinValueValidator(2015),
         ]
     )
     # Other fields as needed

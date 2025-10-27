@@ -70,7 +70,11 @@ def registration(request):
 
 def get_dealerships(request, state="All"):
     """Fetch all or filtered dealerships."""
-    endpoint = "/fetchDealers" if state == "All" else f"/fetchDealers/{state}"
+    endpoint = (
+        "/fetchDealers"
+        if state == "All"
+        else f"/fetchDealers/{state}"
+    )
     dealerships = get_request(endpoint)
     return JsonResponse({
         "status": 200,
@@ -97,6 +101,7 @@ def get_dealer_reviews(request, dealer_id):
         "message": "Bad Request"
     })
 
+
 def get_dealer_details(request, dealer_id):
     """Fetch specific dealer details."""
     if dealer_id:
@@ -114,8 +119,14 @@ def add_review(request):
             post_review(data)
             return JsonResponse({"status": 200})
         except Exception:
-            return JsonResponse({"status": 401, "message": "Error in posting review"})
-    return JsonResponse({"status": 403, "message": "Unauthorized"})
+            return JsonResponse({
+                "status": 401,
+                "message": "Error in posting review"
+            })
+    return JsonResponse({
+        "status": 403,
+        "message": "Unauthorized"
+    })
 
 
 def get_cars(request):
@@ -125,6 +136,9 @@ def get_cars(request):
         initiate()
 
     car_models = CarModel.objects.select_related('car_make')
-    cars = [{"CarModel": cm.name, "CarMake": cm.car_make.name} for cm in car_models]
+    cars = [
+        {"CarModel": cm.name, "CarMake": cm.car_make.name}
+        for cm in car_models
+    ]
 
     return JsonResponse({"CarModels": cars})
